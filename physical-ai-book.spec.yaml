@@ -1,0 +1,209 @@
+spec:
+  metadata:
+    title: "Physical AI & Humanoid Robotics"
+    description: "A comprehensive guide to the principles, technologies, and practices of building intelligent humanoid robots."
+    version: 1.0
+
+  designSystem:
+    palette:
+      light:
+        background: "#FFFFFF"
+        text: "#2D3748" # Dark Gray
+        textSecondary: "#718096" # Medium Gray
+        primary: "#3182CE" # Blue
+        accent: "#4299E1" # Lighter Blue
+        border: "#E2E8F0" # Light Gray
+        codeBackground: "#F7FAFC"
+        heroText: "#FFFFFF"
+      dark:
+        background: "#1A202C"
+        text: "#E2E8F0" # Light Gray
+        textSecondary: "#A0AEC0" # Medium Gray
+        primary: "#63B3ED" # Light Blue
+        accent: "#4299E1" # Blue
+        border: "#4A5568" # Dark Gray
+        codeBackground: "#2D3748"
+        heroText: "#FFFFFF"
+
+    typography:
+      sansSerif: "'Inter', sans-serif"
+      body: "'Source Sans Pro', sans-serif"
+      monospace: "'Fira Code', monospace"
+      headings:
+        h1: { fontFamily: "var(--font-sans-serif)", fontSize: "2.5rem", fontWeight: 700 }
+        h2: { fontFamily: "var(--font-sans-serif)", fontSize: "2rem", fontWeight: 600 }
+        h3: { fontFamily: "var(--font-sans-serif)", fontSize: "1.5rem", fontWeight: 600 }
+        h4: { fontFamily: "var(--font-sans-serif)", fontSize: "1.25rem", fontWeight: 600 }
+      bodyText:
+        fontFamily: "var(--font-body)"
+        fontSize: "1rem"
+        lineHeight: 1.7
+      caption:
+        fontSize: "0.875rem"
+        color: "var(--color-text-secondary)"
+
+    spacing:
+      baseUnit: 8 # in pixels
+      xs: "4px"  # 0.5 * baseUnit
+      sm: "8px"  # 1 * baseUnit
+      md: "16px" # 2 * baseUnit
+      lg: "24px" # 3 * baseUnit
+      xl: "32px" # 4 * baseUnit
+      xxl: "64px"# 8 * baseUnit
+
+  layout:
+    responsiveBreakpoints:
+      mobile: "640px"
+      tablet: "768px"
+      desktop: "1024px"
+    page:
+      maxWidth: "1280px"
+      margin: "0 auto"
+    header:
+      position: "sticky"
+      top: 0
+      height: "64px"
+      padding: "0 var(--spacing-lg)"
+      zIndex: 50
+      borderBottom: "1px solid var(--color-border)"
+      backgroundColor: "rgba(255, 255, 255, 0.8)" # For light theme with backdrop-blur
+      backdropFilter: "saturate(180%) blur(5px)"
+    footer:
+      padding: "var(--spacing-xl) var(--spacing-lg)"
+      borderTop: "1px solid var(--color-border)"
+      marginTop: "var(--spacing-xxl)"
+    mainContent:
+      padding: "var(--spacing-xl) var(--spacing-lg)"
+    sidebar:
+      width: "280px"
+      padding: "var(--spacing-xl) 0"
+
+  components:
+    logo:
+      src: "/assets/logo.svg"
+      alt: "Physical AI Book Logo"
+      width: "150px"
+    navigation:
+      links:
+        - { name: "Home", href: "/" }
+        - { name: "Chapters", href: "/chapters" }
+        - { name: "Glossary", href: "/glossary" }
+        - { name: "Resources", href: "/resources" }
+    heroSection:
+      padding: "var(--spacing-xxl) 0"
+      textAlign: "center"
+      backgroundSize: "cover"
+      backgroundPosition: "center"
+      imagePlaceholder: "url('/assets/hero-placeholder.jpg')"
+      title:
+        style: "h1"
+        color: "var(--color-hero-text)"
+      subtitle:
+        style: "h4"
+        color: "var(--color-hero-text)"
+        marginTop: "var(--spacing-md)"
+    sectionBanner:
+      height: "200px"
+      margin: "var(--spacing-xxl) 0"
+      backgroundSize: "cover"
+      imagePlaceholder: "url('/assets/section-banner-placeholder.jpg')"
+    calloutBox:
+      padding: "var(--spacing-md)"
+      margin: "var(--spacing-lg) 0"
+      borderRadius: "8px"
+      borderWidth: "1px"
+      borderStyle: "solid"
+      iconSize: "20px"
+      types:
+        note:
+          icon: "info-circle"
+          borderColor: "#63B3ED"
+          backgroundColor: "#EBF8FF"
+        tip:
+          icon: "lightbulb"
+          borderColor: "#68D391"
+          backgroundColor: "#F0FFF4"
+        warning:
+          icon: "exclamation-triangle"
+          borderColor: "#F6E05E"
+          backgroundColor: "#FFFFF0"
+        insight:
+          icon: "brain"
+          borderColor: "#B794F4"
+          backgroundColor: "#FAF5FF"
+    codeBlock:
+      fontFamily: "var(--font-monospace)"
+      fontSize: "0.9rem"
+      padding: "var(--spacing-md)"
+      borderRadius: "8px"
+      backgroundColor: "var(--color-code-background)"
+      copyButton: true
+      supportedLanguages: ["python", "ros2", "yaml", "bash", "json"]
+      syntaxHighlighting:
+        lightTheme: "github-light"
+        darkTheme: "github-dark"
+      tabs:
+        activeBorderColor: "var(--color-primary)"
+        inactiveColor: "var(--color-text-secondary)"
+    table:
+      width: "100%"
+      borderCollapse: "collapse"
+      header:
+        backgroundColor: "var(--color-code-background)"
+        fontWeight: 600
+        borderBottom: "2px solid var(--color-border)"
+      cell:
+        padding: "var(--spacing-sm) var(--spacing-md)"
+        border: "1px solid var(--color-border)"
+    imagePlaceholder:
+      display: "block"
+      width: "100%"
+      backgroundColor: "#E2E8F0" # Light Gray
+      borderRadius: "8px"
+      caption:
+        style: "caption"
+        textAlign: "center"
+        marginTop: "var(--spacing-sm)"
+
+  contentStructure:
+    format: "Markdown (MDX for interactive components)"
+    chapters:
+      - { id: "preface", title: "Preface & Introduction", desc: "Setting the stage for the journey into physical AI." }
+      - { id: "foundations", title: "Foundations of Physical AI", desc: "Core concepts of embodiment, intelligence, and robotics." }
+      - { id: "ros2", title: "ROS 2 Robot Control", desc: "Mastering the Robot Operating System for real-world control." }
+      - { id: "simulation", title: "Simulation & Digital Twins", desc: "Creating virtual environments for testing and development." }
+      - { id: "brain", title: "The AI Brain & Perception", desc: "Developing the cognitive architecture and sensory systems." }
+      - { id: "vla", title: "Vision-Language-Action (VLA)", desc: "Integrating advanced models for multimodal understanding and action." }
+      - { id: "capstone", title: "Capstone Project & Deployment", desc: "Building and deploying a complete humanoid robot system." }
+    appendices:
+      - { id: "glossary", title: "Glossary", desc: "Definitions of key terms and concepts." }
+      - { id: "references", title: "References", desc: "Cited works and further reading." }
+      - { id: "setup", title: "Hardware & Software Setup", desc: "A guide to setting up the development environment." }
+      - { id: "projects", title: "Sample Projects", desc: "Example projects to inspire further exploration." }
+    sectionSeparation:
+      style: "horizontal-rule" # or "spacing"
+      rule:
+        height: "1px"
+        color: "var(--color-border)"
+        margin: "var(--spacing-xxl) 0"
+
+  interactivity:
+    smoothScroll: true
+    internalLinks:
+      glossaryTerm:
+        style: "dotted-underline"
+        color: "var(--color-accent)"
+        hover:
+          tooltip: true
+          tooltipContent: "Fetch definition from glossary"
+    imageGallery:
+      layout: "grid" # or "carousel"
+      gridColumns: 3
+
+  footerContent:
+    copyright: "© 2025 Physical AI Press. All rights reserved."
+    contact: "contact@physical-ai-press.com"
+    socialLinks:
+      - { platform: "GitHub", url: "https://github.com/Physical-AI" }
+      - { platform: "Twitter", url: "https://twitter.com/Physical_AI" }
+      - { platform: "LinkedIn", url: "https://linkedin.com/company/physical-ai" }

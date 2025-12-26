@@ -1,0 +1,148 @@
+---
+description: "Task list for implementing the Physical AI & Humanoid Robotics book"
+---
+
+# Tasks: Physical AI & Humanoid Robotics Book
+
+**Input**: Design documents from `/specs/001-physical-ai-book-plan/`
+**Prerequisites**: plan.md (required), physical-ai-book.spec.yaml (required for content structure)
+
+**Organization**: Tasks are grouped by execution phases from the plan. Chapter creation is organized similarly to user stories for independent implementation.
+
+## Format: `- [ ] [TaskID] [P?] [Story?] Description`
+
+- **[P]**: Can run in parallel (different files, no dependencies)
+- **[Story]**: Which chapter this task belongs to (e.g., C1, C2, C3 for Chapter 1, 2, 3)
+- Include exact file paths in descriptions
+
+## Path Conventions
+
+- All paths are relative to the project root.
+
+## Phase 1: Initialization
+
+**Purpose**: Prepare the Docusaurus project for content generation.
+
+- [ ] T001 Initialize Docusaurus project using `npx create-docusaurus@latest book classic`
+- [ ] T002 Configure `docusaurus.config.js` with title, theme, navigation, and footer from `physical-ai-book.spec.yaml`
+- [ ] T003 Create `src/css/custom.css` and populate with CSS variables for colors, fonts, and spacing from `designSystem` in `physical-ai-book.spec.yaml`
+- [ ] T004 Create placeholder files for logo and favicon in `static/img/` (`logo.svg`, `favicon.ico`)
+
+---
+
+## Phase 2: Content Architecture Mapping
+
+**Purpose**: Translate the specified content structure into a physical directory and file hierarchy.
+
+- [ ] T005 Create chapter folders inside `docs/` for each chapter in `contentStructure` of `physical-ai-book.spec.yaml` (e.g., `docs/preface`, `docs/foundations`)
+- [ ] T006 [P] Create appendix folders inside `docs/appendices/` for each appendix.
+- [ ] T007 [P] Create `_category_.json` in each chapter folder to define sidebar labels and positions.
+
+---
+
+## Phase 3: Visual & Layout Planning
+
+**Purpose**: Implement the core visual and structural components defined in the specification.
+
+- [ ] T008 [P] Create custom React component `src/components/HeroSection/index.js` based on `heroSection` spec.
+- [ ] T009 [P] Create custom React component `src/components/SectionBanner/index.js` based on `sectionBanner` spec.
+- [ ] T010 [P] Create custom React component `src/components/CalloutBox/index.js` based on `calloutBox` spec.
+- [ ] T011 Swizzle the main layout to incorporate header, footer, and sidebar dimensions from `layout` spec.
+- [ ] T012 Populate `src/css/custom.css` with styles for typography, code blocks, tables, and other elements to match the spec.
+
+---
+
+## Phase 4: Chapter Content Generation
+
+### C1: Preface & Introduction
+
+**Goal**: Create the preface and introduction chapter.
+**Independent Test**: The preface chapter should render correctly with its content.
+
+- [ ] T013 [C1] Create `docs/preface/introduction.md` with placeholder content.
+
+### C2: Foundations of Physical AI
+
+**Goal**: Create the foundations chapter.
+**Independent Test**: The foundations chapter should render correctly with its content.
+
+- [ ] T014 [C2] Create `docs/foundations/core-concepts.md` with placeholder content.
+
+### C3: ROS 2 Robot Control
+
+**Goal**: Create the ROS 2 chapter.
+**Independent Test**: The ROS 2 chapter should render correctly with its content.
+
+- [ ] T015 [C3] Create `docs/ros2/getting-started.md` with placeholder content.
+
+### C4: Simulation & Digital Twins
+
+**Goal**: Create the simulation chapter.
+**Independent Test**: The simulation chapter should render correctly with its content.
+
+- [ ] T016 [C4] Create `docs/simulation/virtual-environments.md` with placeholder content.
+
+### C5: The AI Brain & Perception
+
+**Goal**: Create the AI brain chapter.
+**Independent Test**: The AI brain chapter should render correctly with its content.
+
+- [ ] T017 [C5] Create `docs/brain/cognitive-architectures.md` with placeholder content.
+
+### C6: Vision-Language-Action (VLA)
+
+**Goal**: Create the VLA chapter.
+**Independent Test**: The VLA chapter should render correctly with its content.
+
+- [ ] T018 [C6] Create `docs/vla/multimodal-models.md` with placeholder content.
+
+### C7: Capstone Project & Deployment
+
+**Goal**: Create the capstone project chapter.
+**Independent Test**: The capstone project chapter should render correctly with its content.
+
+- [ ] T019 [C7] Create `docs/capstone/building-a-robot.md` with placeholder content.
+
+---
+
+## Phase 5: Appendices
+
+- [ ] T020 [P] Create `docs/appendices/glossary.md` with placeholder content.
+- [ ] T021 [P] Create `docs/appendices/references.md` with placeholder content.
+- [ ] T022 [P] Create `docs/appendices/setup.md` with placeholder content.
+- [ ] T023 [P] Create `docs/appendices/projects.md` with placeholder content.
+
+---
+
+## Phase 6: Navigation & Structure Planning
+
+**Purpose**: Configure the global and sidebar navigation.
+
+- [ ] T024 Configure header navigation in `docusaurus.config.js`.
+- [ ] T025 Configure sidebar hierarchy in `sidebars.js` (or via autogenerated config) to reflect chapter and section order.
+
+---
+
+## Phase 7: Quality & Consistency Validation
+
+**Purpose**: Establish a set of rules and checks for consistency.
+
+- [ ] T026 Create `validation-checklist.md` covering typography, callouts, code blocks, links, etc.
+
+---
+
+## Dependencies & Execution Order
+
+- **Phase 1 (Initialization)**: Must be completed first.
+- **Phase 2 (Content Architecture)**: Depends on Phase 1.
+- **Phase 3 (Visual & Layout)**: Depends on Phase 1. Can run in parallel with Phase 2.
+- **Phase 4 (Chapters)**: Depends on Phase 2. Chapters can be worked on in parallel.
+- **Phase 5 (Appendices)**: Depends on Phase 2. Can be worked on in parallel with Phase 4.
+- **Phase 6 (Navigation)**: Depends on Phases 2, 4, and 5.
+- **Phase 7 (Validation)**: Depends on all previous phases.
+
+## Implementation Strategy
+
+1.  **Foundation**: Complete Phases 1, 2, and 3 to set up the project structure and visual theme.
+2.  **Content Population**: Work on Phases 4 and 5 in parallel. Chapters and appendices can be written independently.
+3.  **Finalization**: Complete Phase 6 to configure navigation, then Phase 7 to establish validation rules.

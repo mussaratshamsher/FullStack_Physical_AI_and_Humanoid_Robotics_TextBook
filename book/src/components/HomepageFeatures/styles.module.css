@@ -1,0 +1,19 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featureSvg {
+  max-width: 100%; /* Ensure image scales down */
+  height: auto;    /* Maintain aspect ratio */
+  max-height: 200px; /* Prevent image from becoming too large */
+  width: auto;
+}
+
+@media screen and (max-width: 996px) {
+  .featureSvg {
+    max-height: 150px; /* Adjust max-height for smaller screens */
+  }
+}
