@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyDgXT19xa_W6y94wdyN1K4HDSNHAM7EYEU",
-  authDomain: "physical-ai-auth-fa9d8.firebaseapp.com",
-  projectId: "physical-ai-auth-fa9d8",
-  storageBucket: "physical-ai-auth-fa9d8.firebasestorage.app",
-  messagingSenderId: "269476831492",
-  appId: "1:269476831492:web:2253cdbc8b7a93ea867051"
+  apiKey: process.env.Docusaurus_FIREBASE_API_KEY,
+  authDomain: process.env.Docusaurus_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.Docusaurus_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.Docusaurus_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.Docusaurus_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.Docusaurus_FIREBASE_APP_ID
 };
 
 export default firebaseConfig;

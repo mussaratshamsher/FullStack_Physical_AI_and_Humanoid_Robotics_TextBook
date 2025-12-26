@@ -1,3 +1,4 @@
 local_backend
 .pytest_cache
 __pycache__
+history/prompts/
