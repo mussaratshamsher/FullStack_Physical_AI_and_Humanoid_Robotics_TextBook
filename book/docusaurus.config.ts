@@ -8,10 +8,6 @@ const config: Config = {
     'A comprehensive guide to the principles, technologies, and practices of building intelligent humanoid robots.',
   favicon: 'img/favicon.png',
 
-  future: {
-    v4: true,
-  },
-
   // ✅ Vercel-safe (no deployment required yet)
   url: 'https://example.com',
   baseUrl: '/',
@@ -43,45 +39,11 @@ const config: Config = {
       src: 'https://www.gstatic.com/firebasejs/10.15.0/firebase-auth-compat.js',
       async: true,
     },
-  ],
-  presets: [
-    [
-      'classic',
-      {
-        docs: {
-          sidebarPath: './sidebars.ts',
-          editUrl:
-            'https://github.com/mussaratshamsher/Physical_AI_And_Humanoid_Robotics/tree/main/book/',
-          remarkPlugins: [require('remark-math')],
-          rehypePlugins: [require('rehype-katex')],
-        },
-
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          editUrl:
-            'https://github.com/mussaratshamsher/Physical_AI_And_Humanoid_Robotics/tree/main/book/',
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
-
-        theme: {
-          customCss: './src/css/custom.css',
-        },
-      } satisfies Preset.Options,
-    ],
-  ],
-
-  stylesheets: [
+    // Additional script to handle potential DOM issues
     {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css',
-      type: 'text/css',
-      crossorigin: 'anonymous',
-    },
+      src: '/js/global-script.js',
+      async: true,
+    }
   ],
 
   themeConfig: {
@@ -150,6 +112,46 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+
+  presets: [
+    [
+      'classic',
+      {
+        docs: {
+          sidebarPath: './sidebars.ts',
+          editUrl:
+            'https://github.com/mussaratshamsher/Physical_AI_And_Humanoid_Robotics/tree/main/book/',
+          remarkPlugins: [require('remark-math')],
+          rehypePlugins: [require('rehype-katex')],
+        },
+
+        blog: {
+          showReadingTime: true,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          editUrl:
+            'https://github.com/mussaratshamsher/Physical_AI_And_Humanoid_Robotics/tree/main/book/',
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+        },
+
+        theme: {
+          customCss: './src/css/custom.css',
+        },
+      } satisfies Preset.Options,
+    ],
+  ],
+
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css',
+      type: 'text/css',
+      crossorigin: 'anonymous',
+    },
+  ],
 };
 
 export default config;

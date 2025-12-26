@@ -9,12 +9,9 @@ function Login() {
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Try to get auth context, but provide fallback for SSG
-  const { user, login, signInWithGoogle } = (typeof window !== 'undefined' && window.location)
-    ? require('@site/src/auth/AuthContext').useAuth
-      ? require('@site/src/auth/AuthContext').useAuth()
-      : { user: null, login: null, signInWithGoogle: null }
-    : { user: null, login: null, signInWithGoogle: null };
+  // Get auth context - now available through the AuthProvider wrapper
+  const { useAuth } = require('@site/src/auth/AuthContext');
+  const { user, login, signInWithGoogle } = useAuth() || { user: null, login: null, signInWithGoogle: null };
 
   const history = useHistory();
 
